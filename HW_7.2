@@ -1,0 +1,29 @@
+var services = {
+    "haircut": "60 грн",
+    "shaving": "80 грн",
+    "shampoo": "100 грн"
+   }
+    services['crash the glass'] = "200 грн"
+   function price(){
+     let {haircut,shaving,shampoo,'crash the glass':crash} = services;
+     let sum = Number(haircut.split(" ")[0]) + Number(shaving.split(" ")[0]) + Number(shampoo.split(" ")[0]) + Number(crash.split(" ")[0])                  
+     return sum
+   };
+     let values = Object.values(services);
+     values[0] = Number(values[0].split(" ")[0])
+     let minPrice = values[0]
+     let maxPrice = values[0]
+       
+   for (let i = 1; i < values.length; i++) {
+      values[i] = Number(values[i].split(" ")[0])
+       if (values[i] < minPrice){
+            minPrice = values[i]
+          
+       } else {
+         maxPrice = values[i]  
+       } 
+       
+   }
+   console.log ("minPrice" + ":" + " " + minPrice + " " + "грн")
+   console.log ("maxPrice" + ":" + " " + maxPrice + " " + "грн")
+   console.log("price" + ":" + " " + price() + " " + "грн")
