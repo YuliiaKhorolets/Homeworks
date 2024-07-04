@@ -1,0 +1,16 @@
+let bloodProperties = {
+    bloodType: "B",
+    rhesusFactor: "positive",
+    saturation: 99,
+    getInfo:function (){
+        let info = ""
+        for(let element in this){
+           if (typeof this[element] !== 'function'){
+           info+= element + ": " + this[element] + "\n "
+           }
+        }
+        return info
+    }
+};
+    bloodProperties.hemoglobin = 100
+    console.log (bloodProperties.getInfo())
